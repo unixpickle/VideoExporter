@@ -33,16 +33,12 @@
     
     NSURL * pathURL = [NSURL fileURLWithPath:path];
     
-    UIImage * image1 = [UIImage imageNamed:@"frown_portrait.png"];
-    UIImage * image2 = [UIImage imageNamed:@"smile_portrait.png"];
-    exporter = [[VideoExporter alloc] initWithOutputURL:pathURL size:CGSizeMake(320, 480) frameRate:10];
+    exporter = [[VideoExporter alloc] initWithOutputURL:pathURL size:CGSizeMake(400, 400) frameRate:10];
     [exporter setDelegate:self];
     [exporter beginExport];
-    for (int i = 0; i < 20; i++) {
-        [exporter addFrameImage:image1];
-    }
-    for (int i = 0; i < 20; i++) {
-        [exporter addFrameImage:image2];
+    for (int i = 1; i <= 44; i++) {
+        UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"frame%d.png", i]];
+        [exporter addFrameImage:image];
     }
     [exporter endExport];
     
@@ -55,7 +51,8 @@
 
 - (void)videoExporterFinished:(VideoExporter *)theExporter {
     NSLog(@"Export finished: %@", [theExporter.outputURL path]);
-    MPMoviePlayerController * player = [[MPMoviePlayerController alloc] initWithContentURL:theExporter.outputURL];
+    player = [[MPMoviePlayerController alloc] initWithContentURL:theExporter.outputURL];
+    player.controlStyle = MPMovieControlStyleFullscreen;
     [player prepareToPlay];
     [player.view setFrame:viewController.view.bounds];
     [viewController.view addSubview:player.view];

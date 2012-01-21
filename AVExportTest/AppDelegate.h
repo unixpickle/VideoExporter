@@ -13,6 +13,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, VideoExporterDelegate> {
     VideoExporter * exporter;
     UIViewController * viewController;
+    MPMoviePlayerController * player;
 }
 
 @property (strong, nonatomic) UIWindow * window;

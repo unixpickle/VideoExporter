@@ -89,16 +89,15 @@
         // Wait until a frame has been queued or the exporter
         // has been ended.
         while (true) {
+            BOOL endedVal = NO;
             @synchronized (framesBuffer) {
                 if ([framesBuffer count] > 0) {
                     break;
                 }
+                [endedLock lock];
+                endedVal = isEnded;
+                [endedLock unlock];
             }
-            
-            BOOL endedVal = NO;
-            [endedLock lock];
-            endedVal = isEnded;
-            [endedLock unlock];
             
             if (endedVal) {
                 // no more input will be supplied
@@ -114,7 +113,7 @@
             
             // If the track has not been ended, we will wait 100ms before checking
             // if more frames have been queued.
-            [NSThread sleepForTimeInterval:100];
+            [NSThread sleepForTimeInterval:0.1];
         }
         
         // Get the next frame in the queue
@@ -133,6 +132,8 @@
             [self performSelectorOnMainThread:@selector(handleSessionError:) withObject:error waitUntilDone:NO];
             return;
         }
+        
+        NSLog(@"Adding frame");
         
         // Add the pixel buffer to the asset by writing it to the adaptor, which in turn
         // writes to the input writer, which writes to the asset writer.
