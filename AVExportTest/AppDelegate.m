@@ -12,13 +12,54 @@
 
 @synthesize window = _window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    viewController = [[UIViewController alloc] init];
+    [viewController.view setBackgroundColor:[UIColor grayColor]];
+    UIActivityIndicatorView * activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [activityIndicator setCenter:CGPointMake(viewController.view.frame.size.width / 2, viewController.view.frame.size.height / 2)];
+    [activityIndicator startAnimating];
+    [viewController.view addSubview:activityIndicator];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    [self.window addSubview:viewController.view];
     [self.window makeKeyAndVisible];
+    
+    NSString * path = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"video.mov"];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        [[NSFileManager defaultManager] removeItemAtPath:path error:nil];
+    }
+    
+    NSURL * pathURL = [NSURL fileURLWithPath:path];
+    
+    UIImage * image1 = [UIImage imageNamed:@"frown_portrait.png"];
+    UIImage * image2 = [UIImage imageNamed:@"smile_portrait.png"];
+    exporter = [[VideoExporter alloc] initWithOutputURL:pathURL size:CGSizeMake(320, 480) frameRate:10];
+    [exporter setDelegate:self];
+    [exporter beginExport];
+    for (int i = 0; i < 20; i++) {
+        [exporter addFrameImage:image1];
+    }
+    for (int i = 0; i < 20; i++) {
+        [exporter addFrameImage:image2];
+    }
+    [exporter endExport];
+    
     return YES;
+}
+
+- (void)videoExporter:(VideoExporter *)exporter failedWithError:(NSError *)aError {
+    NSLog(@"Export failed: %@", aError);
+}
+
+- (void)videoExporterFinished:(VideoExporter *)theExporter {
+    NSLog(@"Export finished: %@", [theExporter.outputURL path]);
+    MPMoviePlayerController * player = [[MPMoviePlayerController alloc] initWithContentURL:theExporter.outputURL];
+    [player prepareToPlay];
+    [player.view setFrame:viewController.view.bounds];
+    [viewController.view addSubview:player.view];
+    [player play];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

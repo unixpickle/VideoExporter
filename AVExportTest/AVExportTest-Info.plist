@@ -24,7 +24,9 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>LSRequiresIPhoneOS</key>
+	<key>UIInterfaceOrientation</key>
+	<string>UIInterfaceOrientationLandscapeLeft</string>
+	<key>UIStatusBarHidden</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

@@ -13,6 +13,13 @@
 		FAD50DDB14CA50DF000C4BAA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAD50DD914CA50DF000C4BAA /* InfoPlist.strings */; };
 		FAD50DDD14CA50DF000C4BAA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD50DDC14CA50DF000C4BAA /* main.m */; };
 		FAD50DE114CA50DF000C4BAA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD50DE014CA50DF000C4BAA /* AppDelegate.m */; };
+		FAD50DE814CA51E9000C4BAA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD50DE714CA51E9000C4BAA /* AVFoundation.framework */; };
+		FAD50DEB14CA58B8000C4BAA /* VideoExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD50DEA14CA58B8000C4BAA /* VideoExporter.m */; };
+		FAD50DEF14CA670F000C4BAA /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD50DEE14CA670F000C4BAA /* CoreVideo.framework */; };
+		FAD50DF114CA671A000C4BAA /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD50DF014CA6719000C4BAA /* CoreMedia.framework */; };
+		FAD50DF814CA8257000C4BAA /* frown_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD50DF614CA8257000C4BAA /* frown_portrait.png */; };
+		FAD50DF914CA8257000C4BAA /* smile_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD50DF714CA8257000C4BAA /* smile_portrait.png */; };
+		FAD50DFB14CA82F8000C4BAA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD50DFA14CA82F8000C4BAA /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +27,20 @@
 		FAD50DD014CA50DF000C4BAA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAD50DD214CA50DF000C4BAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FAD50DD414CA50DF000C4BAA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FAD50DD814CA50DF000C4BAA /* AVExportTest-Info.plist */ = {isa = PBXFileReference; path = "AVExportTest-Info.plist"; sourceTree = "<group>"; };
+		FAD50DD814CA50DF000C4BAA /* AVExportTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AVExportTest-Info.plist"; sourceTree = "<group>"; };
 		FAD50DDA14CA50DF000C4BAA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FAD50DDC14CA50DF000C4BAA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FAD50DDE14CA50DF000C4BAA /* AVExportTest-Prefix.pch */ = {isa = PBXFileReference; path = "AVExportTest-Prefix.pch"; sourceTree = "<group>"; };
-		FAD50DDF14CA50DF000C4BAA /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		FAD50DDE14CA50DF000C4BAA /* AVExportTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVExportTest-Prefix.pch"; sourceTree = "<group>"; };
+		FAD50DDF14CA50DF000C4BAA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FAD50DE014CA50DF000C4BAA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FAD50DE714CA51E9000C4BAA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FAD50DE914CA58B8000C4BAA /* VideoExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoExporter.h; sourceTree = "<group>"; };
+		FAD50DEA14CA58B8000C4BAA /* VideoExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoExporter.m; sourceTree = "<group>"; };
+		FAD50DEE14CA670F000C4BAA /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		FAD50DF014CA6719000C4BAA /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		FAD50DF614CA8257000C4BAA /* frown_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frown_portrait.png; sourceTree = "<group>"; };
+		FAD50DF714CA8257000C4BAA /* smile_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile_portrait.png; sourceTree = "<group>"; };
+		FAD50DFA14CA82F8000C4BAA /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD50DFB14CA82F8000C4BAA /* MediaPlayer.framework in Frameworks */,
+				FAD50DF114CA671A000C4BAA /* CoreMedia.framework in Frameworks */,
+				FAD50DEF14CA670F000C4BAA /* CoreVideo.framework in Frameworks */,
+				FAD50DE814CA51E9000C4BAA /* AVFoundation.framework in Frameworks */,
 				FAD50DD114CA50DF000C4BAA /* UIKit.framework in Frameworks */,
 				FAD50DD314CA50DF000C4BAA /* Foundation.framework in Frameworks */,
 				FAD50DD514CA50DF000C4BAA /* CoreGraphics.framework in Frameworks */,
@@ -62,6 +81,10 @@
 		FAD50DCF14CA50DF000C4BAA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAD50DFA14CA82F8000C4BAA /* MediaPlayer.framework */,
+				FAD50DF014CA6719000C4BAA /* CoreMedia.framework */,
+				FAD50DEE14CA670F000C4BAA /* CoreVideo.framework */,
+				FAD50DE714CA51E9000C4BAA /* AVFoundation.framework */,
 				FAD50DD014CA50DF000C4BAA /* UIKit.framework */,
 				FAD50DD214CA50DF000C4BAA /* Foundation.framework */,
 				FAD50DD414CA50DF000C4BAA /* CoreGraphics.framework */,
@@ -74,6 +97,8 @@
 			children = (
 				FAD50DDF14CA50DF000C4BAA /* AppDelegate.h */,
 				FAD50DE014CA50DF000C4BAA /* AppDelegate.m */,
+				FAD50DE914CA58B8000C4BAA /* VideoExporter.h */,
+				FAD50DEA14CA58B8000C4BAA /* VideoExporter.m */,
 				FAD50DD714CA50DF000C4BAA /* Supporting Files */,
 			);
 			path = AVExportTest;
@@ -82,6 +107,8 @@
 		FAD50DD714CA50DF000C4BAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FAD50DF614CA8257000C4BAA /* frown_portrait.png */,
+				FAD50DF714CA8257000C4BAA /* smile_portrait.png */,
 				FAD50DD814CA50DF000C4BAA /* AVExportTest-Info.plist */,
 				FAD50DD914CA50DF000C4BAA /* InfoPlist.strings */,
 				FAD50DDC14CA50DF000C4BAA /* main.m */,
@@ -141,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD50DDB14CA50DF000C4BAA /* InfoPlist.strings in Resources */,
+				FAD50DF814CA8257000C4BAA /* frown_portrait.png in Resources */,
+				FAD50DF914CA8257000C4BAA /* smile_portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +182,7 @@
 			files = (
 				FAD50DDD14CA50DF000C4BAA /* main.m in Sources */,
 				FAD50DE114CA50DF000C4BAA /* AppDelegate.m in Sources */,
+				FAD50DEB14CA58B8000C4BAA /* VideoExporter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

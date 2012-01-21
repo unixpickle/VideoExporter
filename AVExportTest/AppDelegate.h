@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VideoExporter.h"
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, VideoExporterDelegate> {
+    VideoExporter * exporter;
+    UIViewController * viewController;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow * window;
 
 @end
